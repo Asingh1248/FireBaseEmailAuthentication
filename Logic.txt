@@ -1,0 +1,31 @@
+1.firebase.auth()
+2.Flow is Signup--->abhijeet@gmail.com  123456
+3.Login with Different --->abhi@gmail.com 123456 (Show error that such user doesn't exist) and then try with original Login
+4.Logout--
+
+<script>(function(){
+
+})();
+
+imp***Go in the Authentication--Users to check details (https://console.firebase.google.com/u/1/project/fir-login-da1bb/authentication/users)
+Step1:
+        const auth = firebase.auth();
+Step2:  
+        const promise = auth.signInWithEmailAndPassword(email, pass); //Login  
+        const promise = auth.createUserWithEmailAndPassword(email, pass); //SignUp
+
+Step3: 
+       firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {hiding the  div tag--Login
+        else{Logout
+        }
+
+Step 4:
+      firebase.auth().signOut();
+    })   
+
+What is promise vs CallBack Function??
+A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved 
+fulfilled, rejected, or pending   
+
+ 2.handle multiple asynchronous operations easily and provide better error handling than callbacks and events
